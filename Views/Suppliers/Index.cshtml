@@ -1,0 +1,70 @@
+﻿@model IEnumerable<LoginandR.Models.Supplier>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.supUsername)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.supPwd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.supName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.supPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.supAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.supEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.supDescription)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.supUsername)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.supPwd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.supName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.supPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.supAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.supEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.supDescription)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.supID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.supID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.supID })
+        </td>
+    </tr>
+}
+
+</table>

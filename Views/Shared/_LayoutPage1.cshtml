@@ -1,0 +1,185 @@
+@model LoginandR.Models.User
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CartDemo</title>
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
+    <!-- owl css -->
+    <link rel="stylesheet" href="~/Content/css/owl.carousel.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="~/Content/css/page.css">
+    <!-- responsive-->
+    <link rel="stylesheet" href="~/Content/css/responsive.css">
+    <!-- awesome fontfamily -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="loader_bg">
+        <div class="loader"><img src="~/Content/images/loading.gif" alt="" /></div>
+    </div>
+
+    <div class="wrapper">
+        <!-- end loader -->
+
+        <div class="sidebar">
+            <!-- Sidebar  -->
+            <nav id="sidebar">
+
+                <div id="dismiss">
+                    <i class="fa fa-arrow-left"></i>
+                </div>
+
+                <ul class="list-unstyled components">
+
+                    <li class="active">
+                        <a href="https://localhost:44307/Home">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+
+                    <li>
+                        <a href="blog.html">Blog</a>
+                    </li>
+
+                    @if (Session["Fullname"] != null)
+                    {
+        <li>
+            <a href="https://localhost:44307/Cart/Index">Cart</a>
+        </li>
+                        <li>
+                            <a href="contact.html">Chat Us</a>
+                        </li>
+                                        <li>
+                                            <a href="@Url.Action("Logout","Home")" class="btn btn-warning">Logout</a>
+                                        </li>
+}
+
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+
+    <div id="content">
+        <!-- header -->
+        <header>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="full">
+                            <a class="logo" href="https://localhost:44307/Home"><img style="width: 250px; height: 150px;" src="~/Content/images/logo.jpg" alt="#" /></a>
+                        </div>
+                    </div>
+                    <div style="
+     margin-top: 50px;
+     padding-right: 100px;
+ " class="col-md-9">
+                        <div class="full">
+                            <div class="right_header_info">
+                                <ul>
+                                    <li class="dinone">Contact Us : <img style="margin-right: 15px;margin-left: 15px;" src="~/Content/images/phone_icon.png" alt="#"><a href="#">987-654-3210</a></li>
+                                    <li class="dinone"><img style="margin-right: 15px;" src="~/Content/images/mail_icon.png" alt="#"><a href="#">demo@gmail.com</a></li>
+                                    <li class="dinone"><img style="margin-right: 15px;height: 21px;position: relative;top: -2px;" src="~/Content/images/location_icon.png" alt="#"><a href="#">FPT University at Cantho Campus</a></li>
+                                    @if (Session["Fullname"] == null)
+                                    {
+                        <li class="button_user"><a class="button active" href="https://localhost:44307/Home/Login">Login</a><a class="button" href="https://localhost:44307/Home/Register">Register</a></li>
+}
+                                    @if (Session["Fullname"] != null)
+                                    {
+                        <li class="button_user"><a href="#">Hello,@Html.DisplayFor(model => model.uFirstname) @Html.DisplayFor(model => model.uLastname)</a></li>
+}
+                                    <li><img style="margin-right: 15px;" src="~/Content/images/search_icon.png" alt="#"></li>
+                                    <li>
+                                        <button type="button" id="sidebarCollapse">
+                                            <img src="~/Content/images/menu_icon.png" alt="#">
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- end header -->
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+    <footer class="footer text-muted">
+        <div class="footer" style="padding-top: 0px; padding-bottom: 1px; margin-top: 100px;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="footer_logo">
+                            <a href="#"><img style="width: 400px; height: 300px;" src="~/Content/images/logoo.jpg" alt="Alternate Text" /></a>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <ul class="lik">
+                            <li class="active"> <a href="https://localhost:44307/Home">Home</a></li>
+                            <li> <a href="about.html">About</a></li>
+                            @if (Session["FullName"] != null)
+                            {
+                <li> <a href="https://localhost:44307/Cart/Index">Cart</a></li>}
+                            <li> <a href="blog.html">Blog</a></li>
+                            <li> <a href="contact.html">Contact us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="new">
+                            <h3>Newsletter</h3>
+                            <form class="newtetter">
+                                <input class="tetter" placeholder="Your email" type="text" name="Your email">
+                                <button class="submit">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+
+            </div>
+        </div>
+    </footer>
+    <div class="overlay"></div>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <!-- Javascript files-->
+    <script src="~/Scripts/js/jquery.min.js"></script>
+    <script src="~/Scripts/js/popper.min.js"></script>
+    <script src="~/Scripts/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Scripts/js/owl.carousel.min.js"></script>
+    <script src="~/Scripts/js/custom.js"></script>
+    <script src="~/Scripts/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    @*    <script src="~/Scriptsjs/jquery-3.0.0.min.js"></script>*@
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#dismiss, .overlay').on('click', function () {
+                $('#sidebar').removeClass('active');
+                $('.overlay').removeClass('active');
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').addClass('active');
+                $('.overlay').addClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+    </script>
+</body>
+</html>

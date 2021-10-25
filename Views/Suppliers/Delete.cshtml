@@ -1,0 +1,81 @@
+﻿@model LoginandR.Models.Supplier
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Supplier</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.supUsername)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.supUsername)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.supPwd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.supPwd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.supName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.supName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.supPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.supPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.supAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.supAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.supEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.supEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.supDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.supDescription)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

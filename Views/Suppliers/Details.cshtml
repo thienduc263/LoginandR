@@ -1,0 +1,75 @@
+﻿@model LoginandR.Models.Supplier
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Supplier</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.supUsername)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.supUsername)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.supPwd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.supPwd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.supName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.supName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.supPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.supPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.supAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.supAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.supEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.supEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.supDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.supDescription)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.supID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
